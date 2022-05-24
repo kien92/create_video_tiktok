@@ -7,9 +7,10 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start:dev": "nodemon",
-    "start:prod": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/src/index.js",
-    "build": "tsc"
+    "start": "node dist/src/index.js",
+    "postinstall": "tsc",
+    "build": "tsc",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
