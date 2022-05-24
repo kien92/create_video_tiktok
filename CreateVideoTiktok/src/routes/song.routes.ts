@@ -2,7 +2,7 @@ import { transfromToResponse } from "../helper/transfrom.model";
 import { IResponse } from "../interfaces/response.interface";
 import { authToken } from "../middlewares/auth.middleware";
 import { Request, Response, Router } from "express";
-import { getSongs } from "@src/services/song.service";
+import { getSongs } from "../services/song.service";
 
 export default (router: Router) => {
   router.post("/getSongs", authToken, async function (req: Request, res: Response<IResponse>) {

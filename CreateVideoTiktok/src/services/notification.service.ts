@@ -1,10 +1,10 @@
-import { ENotifyType } from "@src/enum/notification.enum";
+import { ENotifyType } from "../enum/notification.enum";
 import admin from "firebase-admin";
 import { MulticastMessage } from "firebase-admin/lib/messaging/messaging-api";
 import connection from "../config/db";
 import { Notify, NotiToken } from "../models/notify.model";
 
-const serviceAccount = require("../serviceAccountKey.json");
+import serviceAccount from "../serviceAccountKey.json";
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://kien-625aa.firebaseio.com",
