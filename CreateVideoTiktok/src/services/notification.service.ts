@@ -4,7 +4,10 @@ import { MulticastMessage } from "firebase-admin/lib/messaging/messaging-api";
 import connection from "../config/db";
 import { Notify, NotiToken } from "../models/notify.model";
 
-import serviceAccount from "../serviceAccountKey.json";
+import firebaseAccountCredentials from "../serviceAccountKey.json";
+
+const serviceAccount = firebaseAccountCredentials as admin.ServiceAccount;
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://kien-625aa.firebaseio.com",
