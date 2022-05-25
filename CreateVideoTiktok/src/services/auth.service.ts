@@ -8,6 +8,7 @@ export const findDeviceID = async (id: string) =>
         reject(error);
         return;
       }
+      console.log(result);
       resolve(result);
     });
   });
