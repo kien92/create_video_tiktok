@@ -1,6 +1,6 @@
 use heroku_51261a15187b9d7;
 
-CREATE TABLE `notiContent` (
+CREATE TABLE `noti` (
   `idNoti` int NOT NULL AUTO_INCREMENT,
   `idNotiType` int DEFAULT NULL,
   `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
@@ -29,3 +29,22 @@ CREATE TABLE `users` (
   `deviceIdentity` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+
+CREATE TABLE `notiToken` (
+  `idNotiToken` int NOT NULL AUTO_INCREMENT,
+  `token` varchar(255) DEFAULT NULL,
+  `dateCreate` datetime DEFAULT NULL,
+  PRIMARY KEY (`idNotiToken`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+
+
+/* Query SELECT */
+Select * from notiToken;
+Select * from noti;
+Select * from notiType;
+
+/* OTHER QUERY */
+alter table notiContent rename noti;
+
+/* INSERT */
+insert into noti(idNotiType,content) values (4,"Good day, open app and create video now")

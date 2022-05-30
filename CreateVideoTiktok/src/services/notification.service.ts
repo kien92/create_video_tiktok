@@ -21,13 +21,14 @@ export const pushNoti = async (notiType: ENotifyType) =>
     let resultsNotiContent: any = await contentToken(notiType);
     let content: any = resultsNotiContent.map((notify: Notify) => Object.assign({}, notify));
     const message: MulticastMessage = {
-      data: { content: content[0].content },
+      data: { content: content.toString() },
       tokens: tokens,
     };
     admin
       .messaging()
       .sendMulticast(message)
       .then((res: any) => {
+        console.log("send success");
         rs("success");
       })
       .catch(err => {

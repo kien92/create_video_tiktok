@@ -17,9 +17,9 @@ export default (router: Router) => {
     }),
     async function (req: Request, res: Response<any>) {
       let token = "";
-      let rsFindID: any = await findDeviceID(req.body.deviceID).catch(async (e) => {});
+      let rsFindID: any = await findDeviceID(req.body.deviceID).catch(async e => {});
       if (rsFindID && rsFindID.length === 0) {
-        let crUser = await insertUserToDB(req.body.deviceID).catch(async (e) => {
+        let crUser = await insertUserToDB(req.body.deviceID).catch(async e => {
           res.status(200).json({
             status: true,
             data: e,
