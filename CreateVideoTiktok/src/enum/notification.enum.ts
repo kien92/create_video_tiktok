@@ -1,4 +1,4 @@
 export enum ENotifyType {
-  DAILY = 1,
+  DAILY = 4,
   ANNOUNCEMENT = 2,
 }
