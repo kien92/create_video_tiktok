@@ -21,7 +21,7 @@ export const pushNoti = async (notiType: ENotifyType) =>
     let resultsNotiContent: any = await contentToken(notiType);
     let content: any = resultsNotiContent.map((notify: Notify) => Object.assign({}, notify));
     const message: MulticastMessage = {
-      data: { content: content.toString() },
+      data: { content: content[0].content },
       tokens: tokens,
     };
     admin

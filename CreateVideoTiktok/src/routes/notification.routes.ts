@@ -14,7 +14,7 @@ export default (router: Router) => {
     }
   });
 
-  router.post("/signToken", authToken, async function (req: Request, res: Response<IResponse>) {
+  router.post("/signToken", async function (req: Request, res: Response<IResponse>) {
     const rs = await signToken(req?.body.tokenFCM).catch(e => {
       res.status(200).json(transfromToResponse(e));
     });
